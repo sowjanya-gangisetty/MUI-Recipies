@@ -7,7 +7,8 @@ import {styled} from '@mui/material/styles'
 const StyledButton = styled(Button)`
 background-color: lightgrey;
 color : red ;
-padding:12px`
+padding:12px;
+border-radius:50px`
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
             Click me!!
         </Button>
         <StyledButton>Styled Button</StyledButton>
+        
       </Box>
       </Paper>
     </Container>
