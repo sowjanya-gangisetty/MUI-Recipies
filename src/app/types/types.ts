@@ -4,6 +4,7 @@ export type RecipeType = {
     area: string,
     instructions : string,
     image: string,
-    video: string
+    video: string,
+    ingredients :string[],
 
 }

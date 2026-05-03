@@ -33,7 +33,7 @@ export default function Home() {
                     }}}> 
           Welcome to My recipies
         </Typography>
-        <Button href="/recipe"  startIcon={<RestaurantMenuIcon/ >} 
+        <Button href="/recipes"  startIcon={<RestaurantMenuIcon/ >} 
                 size="large" variant="outlined" color="secondary"
                 sx={{
                   m:4,

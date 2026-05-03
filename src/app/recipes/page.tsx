@@ -25,6 +25,17 @@ const RecipePage = async () => {
         const recipeData = data.meals[0]
         console.log(recipeData)
 
+        const ingredients: string[] = [];
+
+        for (let i = 1; i <= 20; i++) {
+            const ingredient = recipeData[`strIngredient${i}`];
+            const measure = recipeData[`strMeasure${i}`];
+
+            if (ingredient && ingredient.trim() !== "") {
+                ingredients.push(`${measure} ${ingredient}`.trim());
+            }
+        }
+
         selectedRecipe = {
             name: recipeData.strMeal,
             category: recipeData.strCategory,
@@ -32,6 +43,7 @@ const RecipePage = async () => {
             image: recipeData.strMealThumb,
             instructions: recipeData.strInstructions,
             video: recipeData.strYoutube,
+            ingredients
         }
         console.log(selectedRecipe)
     } catch (error) {
