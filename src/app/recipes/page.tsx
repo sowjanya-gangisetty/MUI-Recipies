@@ -25,8 +25,7 @@ const RecipePage = async () => {
         const recipeData = data.meals[0]
         console.log(recipeData)
 
-        const ingredients: string[] = [];
-
+        /*const ingredients: string[] = [];
         for (let i = 1; i <= 20; i++) {
             const ingredient = recipeData[`strIngredient${i}`];
             const measure = recipeData[`strMeasure${i}`];
@@ -34,8 +33,17 @@ const RecipePage = async () => {
             if (ingredient && ingredient.trim() !== "") {
                 ingredients.push(`${measure} ${ingredient}`.trim());
             }
-        }
+        } */
 
+        let ingredients = Object.keys(recipeData).filter(key => key.includes("strIngredient"))
+        let ingredientsWithValue = ingredients.filter((key , index) => recipeData[key] !== "")
+        let ingredientsArray:string[] = []
+        
+        ingredientsWithValue.forEach((key, index)=>{
+            ingredientsArray.push(`${recipeData[key]}-${recipeData[`strMeasure${index + 1}`]}}`)
+        })
+       
+        console.log("Array:" + ingredientsArray)
         selectedRecipe = {
             name: recipeData.strMeal,
             category: recipeData.strCategory,
@@ -43,9 +51,9 @@ const RecipePage = async () => {
             image: recipeData.strMealThumb,
             instructions: recipeData.strInstructions,
             video: recipeData.strYoutube,
-            ingredients
+            ingredients: ingredientsArray
         }
-        console.log(selectedRecipe)
+        console.log("recipe" + selectedRecipe)
     } catch (error) {
         console.log(error)
     }

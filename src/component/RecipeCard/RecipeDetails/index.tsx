@@ -38,31 +38,11 @@ export default function RecipeDetails({ instructions, video, ingredients }: Reci
                         Instructions : {instructions}
                     </Typography>
                 </TabPanel>
-                <TabPanel value="2">
-                    <Box
-                        component="ul"
-                        sx={{
-                            listStyleType: "circle",
-                            display: "flex",
-                            flexDirection: "column",
-                            margin: 0,
-                            fontSize: 22
-                        }}
-                    >
-                        {ingredients.map((item, index) => (
-                            <Box
-                                component="li"
-                                key={index}
-                                sx={{
-                                    textAlign: "left",
-                                }}
-                            >
-                                <Typography variant="body1">{item}</Typography>
-                            </Box>
-                        ))}
-                    </Box>
+                <TabPanel value="2"> Ingredients
+                    {ingredients.map((item:string,index:number)=> 
+                        <p key={index}>{item}</p> )}
                 </TabPanel>
-                <TabPanel value="3">Item Three
+                <TabPanel value="3">Video
                     {embedUrl &&
                         <CardMedia
                             component="iframe"
