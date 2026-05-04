@@ -34,7 +34,9 @@ const RecipePage = async () => {
             if (ingredient && ingredient.trim() !== "") {
                 ingredients.push(`${measure} ${ingredient}`.trim());
             }
-        }
+        } 
+
+       
 
         selectedRecipe = {
             name: recipeData.strMeal,
