@@ -38,7 +38,7 @@ export default function RecipeDetails({ instructions, video, ingredients }: Reci
                         Instructions : {instructions}
                     </Typography>
                 </TabPanel>
-                <TabPanel value="2">
+                <TabPanel value="2"> 
                     <Box
                         component="ul"
                         sx={{
@@ -62,7 +62,7 @@ export default function RecipeDetails({ instructions, video, ingredients }: Reci
                         ))}
                     </Box>
                 </TabPanel>
-                <TabPanel value="3">Item Three
+                <TabPanel value="3">
                     {embedUrl &&
                         <CardMedia
                             component="iframe"
