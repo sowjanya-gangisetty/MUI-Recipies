@@ -3,17 +3,6 @@ import { Typography, Button, Container, Paper, Box } from "@mui/material";
 import RecipeCard from '@/component/RecipeCard'
 import { RecipeType } from "../types/types";
 
-
-/*type RecipeType = {
-    name: string,
-    category: string,
-    area: string,
-    //instructions : string[],
-    image: string,
-    video: string
-
-}*/
-
 const RecipePage = async () => {
 
     let selectedRecipe: RecipeType | null = null
@@ -25,15 +14,6 @@ const RecipePage = async () => {
         const recipeData = data.meals[0]
         console.log(recipeData)
 
-        /*const ingredients: string[] = [];
-        for (let i = 1; i <= 20; i++) {
-            const ingredient = recipeData[`strIngredient${i}`];
-            const measure = recipeData[`strMeasure${i}`];
-
-            if (ingredient && ingredient.trim() !== "") {
-                ingredients.push(`${measure} ${ingredient}`.trim());
-            }
-        } */
 
         let ingredients = Object.keys(recipeData).filter(key => key.includes("strIngredient"))
         let ingredientsWithValue = ingredients.filter((key , index) => recipeData[key] !== "")
