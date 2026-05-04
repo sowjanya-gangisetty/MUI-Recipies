@@ -38,10 +38,11 @@ export default function RecipeDetails({ instructions, video, ingredients }: Reci
                         Instructions : {instructions}
                     </Typography>
                 </TabPanel>
-                <TabPanel value="2">
-                    
+                <TabPanel value="2"> Ingredients
+                    {ingredients.map((item:string,index:number)=> 
+                        <p key={index}>{item}</p> )}
                 </TabPanel>
-                <TabPanel value="3">Item Three
+                <TabPanel value="3">Video
                     {embedUrl &&
                         <CardMedia
                             component="iframe"
